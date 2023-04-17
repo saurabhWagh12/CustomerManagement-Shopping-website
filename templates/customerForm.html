@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <form class="text-center" action="" method="POST">
+        {% csrf_token %}
+            {% comment %} {{formCustomer}} {% endcomment %}
+            {%for i in formCustomer%}
+                {{i.label}}
+                {{i}}
+            <hr>
+            {%endfor%}
+        <input class="btn btn-success btn-lg" type="submit" name="submit">
+    </form>
+
+{% endblock content %}

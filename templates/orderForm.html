@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <form class="text-center" action="" method="POST">
+        {% csrf_token %}
+        {{form.management_form}}
+        {% for i in form%}
+            {{i}}
+            <hr>
+        {%endfor%}
+        <input class="btn btn-success btn-lg" type="submit" name="submit">
+    </form>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
