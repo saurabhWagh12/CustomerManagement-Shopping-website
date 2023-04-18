@@ -2,10 +2,6 @@ from django.contrib import admin
 from django.urls import path,include
 from .views import *
 
-from django.views.static import serve
-from django.conf.urls import url
-from majorProject import settings
-
 urlpatterns = [
     path('',home,name='Home'),
     path('<int:id>/',home,name='Home'),
@@ -19,8 +15,5 @@ urlpatterns = [
     path('register/',register,name='registerPage'),
     path('logout/',loggingOUT,name='logout'),
     path('customerCreation/',createCustomer,name='customerCreation'),
-
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 
 ]
