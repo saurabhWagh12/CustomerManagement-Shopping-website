@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <div class="card card-body text-center" >
+        <p>Are you sure you want to delete {{order.prod.name}}</p>
+        <form action="/deleteOrder/{{order.id}}/" method="POST">
+            {% csrf_token %}
+            <a class="btn btn-success btn-md" href="/">Cancel</a>
+            <input class="btn btn-md btn-danger" type="submit" name="Confirm">
+        </form>
+    </div>
+
+{% endblock content %}
+
+
+
